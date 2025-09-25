@@ -1,6 +1,6 @@
 def vulnerabilityScan(Map config = [:]) {
     loadScript(name: "trivy.sh")
-    sh "./trivy.sh ${config.imageName} ${config.severity} ${config.existCode} ${config.reportName}"
+    sh "./trivy.sh ${config.imageName} ${config.severity} ${config.exitCode} ${config.reportName}"
 }
 
 def convertJsonTrivyReportsToHtml(String sourceFileName, String destFileName) {
